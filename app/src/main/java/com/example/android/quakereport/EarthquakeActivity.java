@@ -51,7 +51,9 @@ public class EarthquakeActivity extends AppCompatActivity {
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
 
-
+        // Set the adapter on the {@link ListView}
+        // so the list can be populated in the user interface
+        earthquakeListView.setAdapter(adapter);
 
     }
 }
