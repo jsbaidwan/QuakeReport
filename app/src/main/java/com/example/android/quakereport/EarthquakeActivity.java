@@ -40,7 +40,6 @@ public class EarthquakeActivity extends AppCompatActivity {
         earthquakes.add(new Earthquake ("5.5", "Moscow", "Mar 17, 2017"));
         earthquakes.add(new Earthquake ("6.9", "Rio de Janeiro", "Jul 12, 2017"));
         earthquakes.add(new Earthquake ("3.7", "Paris", "May 24, 2017"));
-        earthquakes.add(new Earthquake ("2.6", "New Delhi", "July 24, 2017"));
         earthquakes.add(new Earthquake ("1.8", "Calagry", "June 04, 2017"));
 
         // Create an {@link EarthquakeAdapter}, whose data source is a list of
@@ -53,8 +52,6 @@ public class EarthquakeActivity extends AppCompatActivity {
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
 
 
-        // Set the adapter on the {@link ListView}
-        // so the list can be populated in the user interface
-        earthquakeListView.setAdapter(adapter);
+
     }
 }
