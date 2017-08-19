@@ -42,6 +42,7 @@ public class EarthquakeActivity extends AppCompatActivity {
         earthquakes.add(new Earthquake ("6.8", "New Delhi", "July 25, 2017"));
         earthquakes.add(new Earthquake ("6.8", "New Delhi", "July 25, 2017"));
         earthquakes.add(new Earthquake ("6.8", "New Delhi", "July 25, 2017"));
+        earthquakes.add(new Earthquake ("6.8", "New Delhi", "July 25, 2017"));
 
         // Create an {@link EarthquakeAdapter}, whose data source is a list of
         // {@link Earthquake}s. The adapter knows how to create list item views for each item
