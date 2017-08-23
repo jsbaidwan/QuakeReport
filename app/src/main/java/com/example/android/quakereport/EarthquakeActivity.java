@@ -40,7 +40,7 @@ public class EarthquakeActivity extends AppCompatActivity {
         earthquakes.add(new Earthquake ("3.7", "Paris", "May 24, 2017"));
         earthquakes.add(new Earthquake ("1.8", "Calgary", "June 04, 2017"));
         earthquakes.add(new Earthquake ("6.8", "New Delhi", "July 25, 2017"));
-        earthquakes.add(new Earthquake ("6.8", "New Delhi", "July 25, 2017"));
+
 
 
         // Create an {@link EarthquakeAdapter}, whose data source is a list of
