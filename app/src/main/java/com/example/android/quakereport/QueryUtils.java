@@ -58,6 +58,7 @@ public final class QueryUtils {
             JSONArray earthquakeArray = baseJsonResponse.getJSONArray("features");
 
             for(int i = 0; i < earthquakeArray.length();  i++)  {
+                JSONObject currentEarthquake = earthquakeArray.getJSONObject(i);
 
             }
 
