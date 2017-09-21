@@ -59,7 +59,7 @@ public final class QueryUtils {
 
             for(int i = 0; i < earthquakeArray.length();  i++)  {
                 JSONObject currentEarthquake = earthquakeArray.getJSONObject(i);
-
+                JSONObject properties = currentEarthquake.getJSONObject("properties");
             }
 
         } catch (JSONException e) {
