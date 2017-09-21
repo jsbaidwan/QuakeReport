@@ -57,6 +57,10 @@ public final class QueryUtils {
             JSONObject baseJsonResponse = new JSONObject(SAMPLE_JSON_RESPONSE);
             JSONArray earthquakeArray = baseJsonResponse.getJSONArray("features");
 
+            for(int i = 0; i < earthquakeArray.length();  i++)  {
+
+            }
+
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
