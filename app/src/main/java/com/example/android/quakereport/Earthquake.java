@@ -24,7 +24,7 @@ public class Earthquake {
      *  earthquake happened
      */
 
-    public Earthquake (String magnitude, String location, long long timeInMiliseconds)    {
+    public Earthquake (String magnitude, String location, long timeInMiliseconds)    {
 
         mMagnitude = magnitude;
         mLocation = location;
@@ -49,7 +49,7 @@ public class Earthquake {
      * Returns the date of the Earthquake
      */
     public long getTimeInMiliseconds () {
-        return mDate;
+        return mtimeInMiliseconds;
     }
 
 }
