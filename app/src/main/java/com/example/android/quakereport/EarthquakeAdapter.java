@@ -58,13 +58,18 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         // Find the TextView with view ID date
         TextView dateView = (TextView) listItemView.findViewById(R.id.tv_date);
-        //Format the date string (i.e. "Mar 3, 2010")
+        // Format the date string (i.e. "Mar 3, 2010")
         String formattedDate = formatDate(dateObject);
         // Display the date of the current earthquake in that TextView
         dateView.setText(formattedDate);
 
-        // Display the date of the current earthquake in that TextView
-        dateView.setText(currentEarthquake.getDate());
+        // Find the TextView with view ID time
+        TextView timeView = (TextView) listItemView.findViewById(R.id.tv_time);
+        // Format the time string (i.e. "4:30PM")
+        String formattedTime = formatTime(dateObject);
+        // Display the time of the current earthquake in that TextView
+        timeView.setText(formattedTime);
+
 
         // Return the list View item that is now showing the appropriate data
         return listItemView;
