@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -73,5 +74,13 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         // Return the list View item that is now showing the appropriate data
         return listItemView;
+    }
+
+    /*
+     * Return the formatted date string (i.e. "Mar 3, 2007") from a Date object
+     */
+    private String formatDate(Date dateObject) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("LL, dd, yyyy");
+        return dateFormat.format(dateObject);
     }
 }
