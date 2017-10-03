@@ -80,7 +80,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
      * Return the formatted date string (i.e. "Mar 3, 2007") from a Date object
      */
     private String formatDate(Date dateObject) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("LL, dd, yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
         return dateFormat.format(dateObject);
     }
     /**
