@@ -20,7 +20,7 @@ public class Earthquake {
      *
      * @param magnitude is the magnitude (size) of the earthquake
      * @param location is the city location of the earthquake
-     * @param timeInMilliseconds is the time in milliseconds (from the Epoch) when the
+     * @param timeInMiliseconds is the time in milliseconds (from the Epoch) when the
      *  earthquake happened
      */
 

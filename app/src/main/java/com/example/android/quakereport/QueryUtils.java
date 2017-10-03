@@ -65,7 +65,7 @@ public final class QueryUtils {
                 String magnitude = properties.getString("mag");
                 String location = properties.getString("place");
                 // Extract the value for the key called "time" in long due to Unix time
-                long time = properties.getString("time");
+                long time = properties.getLong("time");
 
                 Earthquake earthquake =  new Earthquake(magnitude, location, time);
                 earthquakes.add(earthquake);
