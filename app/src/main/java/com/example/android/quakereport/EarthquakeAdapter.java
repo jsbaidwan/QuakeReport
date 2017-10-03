@@ -50,9 +50,21 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         magnitudeView.setText(currentEarthquake.getMagnitude());
 
         // Find the TextView with view ID location
-        TextView locationView = (TextView) listItemView.findViewById(R.id.tv_location);
+        TextView locationViewOffset = (TextView) listItemView.findViewById(R.id.tv_location_offset);
         // Display the location of the current earthquake in that TextView
-        locationView.setText(currentEarthquake.getLocation());
+       // locationView.setText(currentEarthquake.getLocation());
+        String location = currentEarthquake.getLocation();
+        String[] locationSplit = location.split("of");
+        String offsetLocation = locationSplit[0];
+        String primaryLocation = locationSplit[1];
+        locationViewOffset.setText(offsetLocation);
+
+
+        // Find the TextView with view ID location
+        TextView locationViewPrimary = (TextView) listItemView.findViewById(R.id.tv_location_primary);
+        // Display the location of the current earthquake in that TextView
+        locationViewPrimary.setText(primaryLocation);
+
 
         //Create a new Data object  from the time in milliseconds of the earthquake
         Date dateObject = new Date(currentEarthquake.getTimeInMiliseconds());
