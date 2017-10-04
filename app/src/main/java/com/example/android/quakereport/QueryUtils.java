@@ -51,21 +51,38 @@ public final class QueryUtils {
         // Catch the exception so the app doesn't crash, and print the error message to the logs.
         try {
 
-
+            // Create a JSONObject from the SAMPLE_JSON_RESPONSE string
             JSONObject baseJsonResponse = new JSONObject(SAMPLE_JSON_RESPONSE);
+
+            // Extract the JSONArray associated with the key called "features",
+            // which represent a list of features (or earthquake).
             JSONArray earthquakeArray = baseJsonResponse.getJSONArray("features");
 
+            // For each earthquake in the earthquakeArray, create an {@link Earthquake} object
             for(int i = 0; i < earthquakeArray.length();  i++)  {
 
+                // Get single earthquake at position i within the list of earthquakes
                 JSONObject currentEarthquake = earthquakeArray.getJSONObject(i);
+
+                // For given earthquakes, extract the JSONObject associated with the
+                // key called "properties", which represents a list of all properties
+                // for that earthquake.
                 JSONObject properties = currentEarthquake.getJSONObject("properties");
 
+                // Extract the value for the key called "mag"
                 String magnitude = properties.getString("mag");
+
+                // Extract the value for the key called "place"
                 String location = properties.getString("place");
+
                 // Extract the value for the key called "time" in long due to Unix time
                 long time = properties.getLong("time");
 
+                // Create a new {@link Earthquake} object with the magnitude, location
+                // and time from JSON response.
                 Earthquake earthquake =  new Earthquake(magnitude, location, time);
+
+                // Add the new {@link Earthquake} to the list of earthquakes.
                 earthquakes.add(earthquake);
             }
 
