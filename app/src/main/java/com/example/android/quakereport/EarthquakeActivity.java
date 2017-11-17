@@ -41,7 +41,7 @@ public class EarthquakeActivity extends AppCompatActivity {
 //        earthquakes.add(new Earthquake ("5.3", "London","Aug 8, 2016"));
 //        earthquakes.add(new Earthquake ("7.6", "Tokyo", "Feb 14, 2017"));
 //        earthquakes.add(new Earthquake ("2.7", "California", "May 4, 2017");
-
+//        earthquakes.add(new Earthquake ("0.2", "New Delhi", "Nov 29, 2015");
 
 
 
