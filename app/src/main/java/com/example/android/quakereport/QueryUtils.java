@@ -10,6 +10,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 /**
@@ -17,12 +19,29 @@ import java.util.ArrayList;
  */
 public final class QueryUtils {
 
+    /** Tag for the log message */
+    private static final String LOG_TAG = QueryUtils.class.getSimpleName();
+
     /**
      * Create a private constructor because no one should ever create a {@link QueryUtils} object.
      * This class is only meant to hold static variables and methods, which can be accessed
      * directly from the class name QueryUtils (and an object instance of QueryUtils is not needed).
      */
     private QueryUtils() {
+    }
+
+    /**
+     * Returns new object from the given string url
+     */
+    private static URL createUrl(String stringUrl)  {
+        URL url = null;
+        try {
+            url = new URL(stringUrl);
+        }
+        catch (MalformedURLException e)   {
+            Log.e(LOG_TAG, "Problem building the url", e);
+        }
+        return url;
     }
 
     /**
