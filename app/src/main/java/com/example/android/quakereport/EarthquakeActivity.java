@@ -28,7 +28,8 @@ import java.util.ArrayList;
 public class EarthquakeActivity extends AppCompatActivity {
 
     /** URL for the earthquake data from USGS dataset */
-    private static final String UGSG_REQUEST_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&orderby=time&minmag=6&limit=10";
+    private static final String UGSG_REQUEST_URL =
+            "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&orderby=time&minmag=6&limit=10";
 
 
     @Override
