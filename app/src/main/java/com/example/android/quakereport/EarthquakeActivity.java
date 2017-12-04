@@ -17,6 +17,7 @@ package com.example.android.quakereport;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,6 +25,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EarthquakeActivity extends AppCompatActivity {
 
@@ -46,8 +48,6 @@ public class EarthquakeActivity extends AppCompatActivity {
 //        earthquakes.add(new Earthquake ("2.7", "California", "May 4, 2017");
 
 
-
-
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
 
@@ -64,7 +64,7 @@ public class EarthquakeActivity extends AppCompatActivity {
 
         earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)    {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Find the current earthquake that is clicked on
                 Earthquake currentEarthquake = adapter.getItem(position);
 
@@ -79,6 +79,18 @@ public class EarthquakeActivity extends AppCompatActivity {
             }
 
         });
-
     }
+    private class EarthquakeAsyncTask extends AsyncTask<String, Void, List<Earthquake>> {
+
+        @Override
+        protected List<Earthquake> doInBackground(String... urls) {
+            return;
+        }
+
+        @Override
+        protected void onPreExecute(List<Earthquake> data) {
+            super.onPreExecute();
+        }
+    }
+
 }
