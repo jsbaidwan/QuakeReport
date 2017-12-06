@@ -77,6 +77,10 @@ public final class QueryUtils {
             }
         } catch (IOException e) {
             Log.e(LOG_TAG, "Problem retrieving the earthquake JSON result", e);
+        } finally {
+            if (urlConnection != null)  {
+                urlConnection.disconnect();
+            }
         }
     }
 
