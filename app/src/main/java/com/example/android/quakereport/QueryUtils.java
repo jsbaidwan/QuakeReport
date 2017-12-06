@@ -65,8 +65,17 @@ public final class QueryUtils {
             urlConnection.setConnectTimeout(15000);
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
-        }
 
+            //If the request was successful (response code 200),
+            // then read the input stream and parse the response.
+            if(urlConnection.getResponseCode() == 200)  {
+                inputStream = urlConnection.getInputStream();
+                jsonResponse = readFromStream(inputStream);
+            }
+            else    {
+                Log.e(LOG_TAG, "Error response code: " +urlConnection.getResponseCode());
+            }
+        }
     }
 
     /**
