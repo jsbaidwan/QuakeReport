@@ -81,7 +81,14 @@ public final class QueryUtils {
             if (urlConnection != null)  {
                 urlConnection.disconnect();
             }
+            if (inputStream != null )   {
+                // Closing the input stream could throw IOException, which is why
+                // the makeHttpRequest(URL url) method signature than an IOException
+                // could be thrown.
+                inputStream.close();
+            }
         }
+        return jsonResponse;
     }
 
     /**
