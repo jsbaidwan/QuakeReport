@@ -10,6 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -42,6 +43,18 @@ public final class QueryUtils {
             Log.e(LOG_TAG, "Problem building the url", e);
         }
         return url;
+    }
+    /**
+     *  Make an HTTP request to the given URL and return a String as a response
+     */
+    private static String makeHttpRequest(URL url) throws IOException {
+        String jsonResponse = "";
+
+        // If the URL is null, then return early.
+        if (url == null)    {
+            return jsonResponse;
+        }
+
     }
 
     /**
