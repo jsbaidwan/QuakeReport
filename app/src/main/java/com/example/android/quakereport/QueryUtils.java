@@ -4,6 +4,7 @@ package com.example.android.quakereport;
  * Created by jaspreet.singh on 9/4/2017.
  */
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -19,6 +20,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Helper methods related to requesting and receiving earthquake data from USGS.
@@ -115,9 +117,13 @@ public final class QueryUtils {
 
     /**
      * Return a list of {@link Earthquake} objects that has been built up from
-     * parsing a JSON response.
+     * parsing the given JSON response.
      */
-    public static ArrayList<Earthquake> extractEarthquakes() {
+    private static List<Earthquake> extractFeatureEarthquakes(String earthquakeJson) {
+        // If the JSON string is empty or null, then return early
+        if(TextUtils.isEmpty(earthquakeJson))   {
+            return null;
+        }
 
         // Create an empty ArrayList that we can start adding earthquakes to
         ArrayList<Earthquake> earthquakes = new ArrayList<>();
