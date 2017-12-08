@@ -39,6 +39,13 @@ public final class QueryUtils {
     }
 
     /**
+     *  Query the UGGS dataset and return the list of {@link Earthquake} objects.
+     */
+    public static List<Earthquake> fetchEarthquakeData (String requestUrl)  {
+
+    }
+
+    /**
      * Returns new object from the given string url
      */
     private static URL createUrl(String stringUrl)  {
@@ -120,13 +127,14 @@ public final class QueryUtils {
      * parsing the given JSON response.
      */
     private static List<Earthquake> extractFeatureEarthquakes(String earthquakeJson) {
+
         // If the JSON string is empty or null, then return early
         if(TextUtils.isEmpty(earthquakeJson))   {
             return null;
         }
 
         // Create an empty ArrayList that we can start adding earthquakes to
-        ArrayList<Earthquake> earthquakes = new ArrayList<>();
+        List<Earthquake> earthquakes = new ArrayList<>();
 
         // Try to parse the SAMPLE_JSON_RESPONSE. If there's a problem with the way the JSON
         // is formatted, a JSONException exception object will be thrown.
@@ -134,7 +142,7 @@ public final class QueryUtils {
         try {
 
             // Create a JSONObject from the SAMPLE_JSON_RESPONSE string
-            JSONObject baseJsonResponse = new JSONObject(SAMPLE_JSON_RESPONSE);
+            JSONObject baseJsonResponse = new JSONObject(earthquakeJson);
 
             // Extract the JSONArray associated with the key called "features",
             // which represent a list of features (or earthquake).
