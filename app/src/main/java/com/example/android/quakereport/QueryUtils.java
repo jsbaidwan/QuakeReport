@@ -45,6 +45,14 @@ public final class QueryUtils {
 
         // Create URL object
         URL url = createUrl(requestUrl);
+
+        // Perform HTTP request to the URL and receive a JSON response back
+        String jsonResponse = null;
+        try {
+            jsonResponse = makeHttpRequest(url);
+        }   catch (IOException e)   {
+            Log.e(LOG_TAG, "Problem making HTTP request.", e);
+        }
     }
 
     /**
