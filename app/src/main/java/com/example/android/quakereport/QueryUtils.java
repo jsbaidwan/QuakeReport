@@ -53,6 +53,12 @@ public final class QueryUtils {
         }   catch (IOException e)   {
             Log.e(LOG_TAG, "Problem making HTTP request.", e);
         }
+
+        // Extract relevant fields from the JSON response and create a list of {@link Earthquake}s
+        List<Earthquake> earthquakes = extractFeatureFromJson(jsonResponse);
+
+        // Return the list of {@link Earthquake}s
+        return earthquakes;
     }
 
     /**
@@ -136,7 +142,7 @@ public final class QueryUtils {
      * Return a list of {@link Earthquake} objects that has been built up from
      * parsing the given JSON response.
      */
-    private static List<Earthquake> extractFeatureEarthquakes(String earthquakeJson) {
+    private static List<Earthquake> extractFeatureFromJson(String earthquakeJson) {
 
         // If the JSON string is empty or null, then return early
         if(TextUtils.isEmpty(earthquakeJson))   {
