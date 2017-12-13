@@ -115,9 +115,8 @@ public class EarthquakeActivity extends AppCompatActivity {
          */
         @Override
         protected void onPostExecute(List<Earthquake> data) {
-
+            // Clear the adapter of previous earthquake data
+            mAdapter.clear();
         }
-
-        s
     }
 }
