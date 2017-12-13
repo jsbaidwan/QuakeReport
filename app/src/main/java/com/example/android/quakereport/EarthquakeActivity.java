@@ -101,6 +101,9 @@ public class EarthquakeActivity extends AppCompatActivity {
             if (urls.length < 1 || urls[0] == null)  {
                 return null;
             }
+
+            List<Earthquake> result = QueryUtils.fetchEarthquakeData(urls[0]);
+            return result;
         }
     }
 }
