@@ -30,7 +30,7 @@ import java.util.List;
 public class EarthquakeActivity extends AppCompatActivity {
 
     /** URL for the earthquake data from USGS dataset */
-    private static final String UGSG_REQUEST_URL =
+    private static final String USGS_REQUEST_URL =
             "https://earthquake.usgs.gov/fdsnws/event/1/query?" +
                     "format=geojson&eventtype=earthquake&orderby=time&minmag=6&limit=10";
 
@@ -90,6 +90,17 @@ public class EarthquakeActivity extends AppCompatActivity {
      */
     private class EarthquakeAsyncTask extends AsyncTask<String, Void, List<Earthquake>> {
 
-
-
+        /**
+         * This method runs on a background thread and perform the network request.
+         * We should not update the UI from the background thread, so we return the list of
+         * {@link Earthquake}s as the result.
+         */
+        @Override
+        protected List<Earthquake> doInBackground(String... urls) {
+            // Don't perform the request if there is no URLs, or the first URL is null.
+            if (urls.length < 1 || urls[0] == null)  {
+                return null;
+            }
+        }
+    }
 }
