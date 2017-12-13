@@ -105,5 +105,19 @@ public class EarthquakeActivity extends AppCompatActivity {
             List<Earthquake> result = QueryUtils.fetchEarthquakeData(urls[0]);
             return result;
         }
+
+        /**
+         *  This method runs on the main UI thread after the background work has been
+         *  completed. This is method receives as input, the return value from the doInBackground()
+         *  method. First we clear out the adapter, to get rid of earthquake data from a previous
+         *  query to USGS. Then we update the adapter with the new list of earthquake,
+         *  which will trigger the ListView to re-populate the list items.
+         */
+        @Override
+        protected void onPostExecute(List<Earthquake> data) {
+
+        }
+
+        s
     }
 }
