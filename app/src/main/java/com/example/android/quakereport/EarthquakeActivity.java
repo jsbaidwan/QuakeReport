@@ -57,9 +57,9 @@ public class EarthquakeActivity extends AppCompatActivity {
 
         earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
                 // Find the current earthquake that is clicked on
-                Earthquake currentEarthquake = adapter.getItem(position);
+                Earthquake currentEarthquake = mAdapter.getItem(position);
 
                 // Convert the String URL into URI object (to pass into the Intent constructor)
                 Uri earthquakeUri = Uri.parse(currentEarthquake.getUrl());
@@ -73,17 +73,23 @@ public class EarthquakeActivity extends AppCompatActivity {
 
         });
     }
+
+    /**
+     * {@link AsyncTask} to perform the network request on the background thread and then update
+     * the UI with the list of earthquake in the response.
+     *
+     * AsyncTask has three generic parameters: the input type, a type used for progress updates,
+     * and an output type. Our task will take a String URL, and return an Earthquake. We don't
+     * do progress update, so the second parameter is void.
+     *
+     * We'll only override two of the method of AsyncTask: donInBackground() and onPostExecute().
+     * The doInBackground() method runs on a background thread, so it can run long-running code
+     * (like network activity), without interfering with responsiveness of the app.
+     * Then the onPostExecute() is passed the result of doInBackground() method, but run on the
+     * UI thread, so it can used the produced data to update the UI
+     */
     private class EarthquakeAsyncTask extends AsyncTask<String, Void, List<Earthquake>> {
 
-        @Override
-        protected List<Earthquake> doInBackground(String... urls) {
-            return;
-        }
 
-        @Override
-        protected void onPreExecute(List<Earthquake> data) {
-            super.onPreExecute();
-        }
-    }
 
 }
