@@ -73,6 +73,7 @@ public class EarthquakeActivity extends AppCompatActivity {
 
         });
 
+        // Create new AsyncTask object and
         // Start the AsyncTask to fetch the earthquake data
         EarthquakeAsyncTask task = new EarthquakeAsyncTask();
         task.execute(USGS_REQUEST_URL);
