@@ -28,6 +28,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
     /*
      *Construct a new {@Link EarthquakeAdapter}
+     *Adapter is responsible for creating list View
      *
      * @param context of the  app
      * @param earthquakes is the list of the earthquakes, which is the data source of the adapter
