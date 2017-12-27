@@ -107,6 +107,7 @@ public class EarthquakeActivity extends AppCompatActivity {
                 return null;
             }
 
+            // Fetch the Url and pass it to List of earthquake.
             List<Earthquake> result = QueryUtils.fetchEarthquakeData(urls[0]);
             return result;
         }
