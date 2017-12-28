@@ -135,7 +135,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
     /**
      * Return the color for the magnitude circle based on tbe intensity of the earthquake.
-     *
+     * Using switch statements we can achieve the different magnitude colors
      * @param magnitude of the earthquake
      */
     private int getMagnitudeColor(double magnitude) {
