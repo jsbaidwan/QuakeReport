@@ -3,6 +3,7 @@ import android.content.AsyncTaskLoader;
 import com.example.android.quakereport.Earthquake;
 
 import java.util.List;
+import android.content.AsyncTaskLoader;
 
 /**
  * Created by jaspreet.singh on 1/8/2018.
