@@ -11,8 +11,11 @@ import java.util.List;
 
 public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
 
+    private String mUrl;
+
     public EarthquakeLoader (Context context, String url)   {
         super(context);
+        mUrl = url;
     }
 
 }
