@@ -93,42 +93,42 @@ public class EarthquakeActivity extends AppCompatActivity {
      * Then the onPostExecute() is passed the result of doInBackground() method, but run on the
      * UI thread, so it can used the produced data to update the UI
      */
-    private class EarthquakeAsyncTask extends AsyncTask<String, Void, List<Earthquake>> {
-
-        /**
-         * This method runs on a background thread and perform the network request.
-         * We should not update the UI from the background thread, so we return the list of
-         * {@link Earthquake}s as the result.
-         */
-        @Override
-        protected List<Earthquake> doInBackground(String... urls) {
-            // Don't perform the request if there is no URLs, or the first URL is null.
-            if (urls.length < 1 || urls[0] == null)  {
-                return null;
-            }
-
-            // Fetch the Url and pass it to List of earthquake.
-            List<Earthquake> result = QueryUtils.fetchEarthquakeData(urls[0]);
-            return result;
-        }
-
-        /**
-         *  This method runs on the main UI thread after the background work has been
-         *  completed. This is method receives as input, the return value from the doInBackground()
-         *  method. First we clear out the adapter, to get rid of earthquake data from a previous
-         *  query to USGS. Then we update the adapter with the new list of earthquake,
-         *  which will trigger the ListView to re-populate the list items.
-         */
-        @Override
-        protected void onPostExecute(List<Earthquake> data) {
-            // Clear the adapter of previous earthquake data
-            mAdapter.clear();
-
-            // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
-            // data set. This will trigger the ListView to update.
-            if (data != null || !data.isEmpty())    {
-                mAdapter.addAll(data);
-            }
-        }
-    }
+//    private class EarthquakeAsyncTask extends AsyncTask<String, Void, List<Earthquake>> {
+//
+//        /**
+//         * This method runs on a background thread and perform the network request.
+//         * We should not update the UI from the background thread, so we return the list of
+//         * {@link Earthquake}s as the result.
+//         */
+//        @Override
+//        protected List<Earthquake> doInBackground(String... urls) {
+//            // Don't perform the request if there is no URLs, or the first URL is null.
+//            if (urls.length < 1 || urls[0] == null)  {
+//                return null;
+//            }
+//
+//            // Fetch the Url and pass it to List of earthquake.
+//            List<Earthquake> result = QueryUtils.fetchEarthquakeData(urls[0]);
+//            return result;
+//        }
+//
+//        /**
+//         *  This method runs on the main UI thread after the background work has been
+//         *  completed. This is method receives as input, the return value from the doInBackground()
+//         *  method. First we clear out the adapter, to get rid of earthquake data from a previous
+//         *  query to USGS. Then we update the adapter with the new list of earthquake,
+//         *  which will trigger the ListView to re-populate the list items.
+//         */
+//        @Override
+//        protected void onPostExecute(List<Earthquake> data) {
+//            // Clear the adapter of previous earthquake data
+//            mAdapter.clear();
+//
+//            // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
+//            // data set. This will trigger the ListView to update.
+//            if (data != null || !data.isEmpty())    {
+//                mAdapter.addAll(data);
+//            }
+//        }
+//    }
 }
