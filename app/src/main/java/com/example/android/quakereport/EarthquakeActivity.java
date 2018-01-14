@@ -77,7 +77,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
 
         });
 
-        getLoaderManager().initLoader(1, null, this);
+        getLoaderManager().initLoader(1, null, this).forceLoad();
 
         // Create new AsyncTask object and
         // Start the AsyncTask to fetch the earthquake data
