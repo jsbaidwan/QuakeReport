@@ -15,8 +15,15 @@ import java.util.List;
  */
 public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
 
+    // Query URL
     private String mUrl;
 
+    /**
+     * Constructs a new {@link Earthquake}
+     *
+     * @param context of the activity
+     * @param url to load the data from
+     */
     public EarthquakeLoader (Context context, String url)   {
         super(context);
         mUrl = url;
