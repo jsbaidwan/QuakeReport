@@ -31,7 +31,10 @@ import java.util.List;
 
 import static android.R.attr.data;
 
-public class EarthquakeActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Earthquake>> {
+public class EarthquakeActivity extends AppCompatActivity
+        implements LoaderManager.LoaderCallbacks<List<Earthquake>> {
+
+    private static String LOG_TAG = EarthquakeActivity.class.getName();
 
     /** URL for the earthquake data from USGS dataset */
     private static final String USGS_REQUEST_URL =
