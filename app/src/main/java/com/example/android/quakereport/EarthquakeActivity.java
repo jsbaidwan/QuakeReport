@@ -86,7 +86,7 @@ public class EarthquakeActivity extends AppCompatActivity
 
         });
 
-        getLoaderManager().initLoader(1, null, this).forceLoad();
+        getLoaderManager().initLoader(EARTHQUAKE_LOADER_ID, null, this).forceLoad();
 
         // Create new AsyncTask object and
         // Start the AsyncTask to fetch the earthquake data
