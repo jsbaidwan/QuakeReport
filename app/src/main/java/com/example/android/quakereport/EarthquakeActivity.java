@@ -41,6 +41,12 @@ public class EarthquakeActivity extends AppCompatActivity
             "https://earthquake.usgs.gov/fdsnws/event/1/query?" +
                     "format=geojson&eventtype=earthquake&orderby=time&minmag=6&limit=10";
 
+    /**
+     * Constant value for the earthquake loader ID. We can choose any integer.
+     * This really comes into play if we are using multiple loaders.
+     */
+    private static final int EARTHQUAKE_LOADER_ID = 1;
+
     /** Adapter for the list of earthquakes */
     private EarthquakeAdapter mAdapter;
 
