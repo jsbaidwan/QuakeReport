@@ -88,12 +88,14 @@ public class EarthquakeActivity extends AppCompatActivity
 
         });
 
-        getLoaderManager().initLoader(EARTHQUAKE_LOADER_ID, null, this).forceLoad();
+        // Get a reference to the Loader Manager, in order to interact with loaders.
+        LoaderManager loaderManager = getLoaderManager();
 
-        // Create new AsyncTask object and
-        // Start the AsyncTask to fetch the earthquake data
-//        EarthquakeAsyncTask task = new EarthquakeAsyncTask();
-//        task.execute(USGS_REQUEST_URL);
+        // Initialize the loader. Pass in the int ID constant defined above and pass in null for
+        // bundle. Pass in this activity for LoaderCalLBacks parameter (which is valid
+        // because this activity implements the LoaderCallBack interface).
+        loaderManager.initLoader(EARTHQUAKE_LOADER_ID, null, this).forceLoad();
+
     }
 
     @Override
