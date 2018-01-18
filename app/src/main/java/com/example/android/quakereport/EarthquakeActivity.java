@@ -106,7 +106,9 @@ public class EarthquakeActivity extends AppCompatActivity
 
     @Override
     public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> earthquakes) {
+        // Clear the adapter of previous earthquake data
         mAdapter.clear();
+
         mAdapter.addAll(earthquakes);
     }
 
