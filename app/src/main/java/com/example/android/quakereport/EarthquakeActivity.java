@@ -22,6 +22,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -95,17 +96,20 @@ public class EarthquakeActivity extends AppCompatActivity
         // bundle. Pass in this activity for LoaderCalLBacks parameter (which is valid
         // because this activity implements the LoaderCallBack interface).
         loaderManager.initLoader(EARTHQUAKE_LOADER_ID, null, this);
+        Log.e(LOG_TAG, "Response for initLoader().....");
 
     }
 
     @Override
     public Loader<List<Earthquake>> onCreateLoader(int i, Bundle bundle) {
+        Log.e(LOG_TAG, "Response for onCreateLoader()....");
         // Create new loader for this given URL.
         return new EarthquakeLoader(EarthquakeActivity.this, USGS_REQUEST_URL);
     }
 
     @Override
     public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> earthquakes) {
+        Log.e(LOG_TAG, "Response for onLoadFinish()....");
         // Clear the adapter of previous earthquake data
         mAdapter.clear();
 
@@ -118,6 +122,7 @@ public class EarthquakeActivity extends AppCompatActivity
 
     @Override
     public void onLoaderReset(Loader<List<Earthquake>> loader) {
+        Log.e(LOG_TAG, "Response for onLoadReset()....");
         // Loader reset, so we can clear out our existing data.
         mAdapter.clear();
     }
