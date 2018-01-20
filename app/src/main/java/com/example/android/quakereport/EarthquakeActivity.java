@@ -101,7 +101,6 @@ public class EarthquakeActivity extends AppCompatActivity
 
     @Override
     public Loader<List<Earthquake>> onCreateLoader(int i, Bundle bundle) {
-        Log.e(LOG_TAG, "Response for onCreateLoader()....");
         // Create new loader for this given URL.
         return new EarthquakeLoader(EarthquakeActivity.this, USGS_REQUEST_URL);
     }
