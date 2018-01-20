@@ -119,7 +119,6 @@ public class EarthquakeActivity extends AppCompatActivity
 
     @Override
     public void onLoaderReset(Loader<List<Earthquake>> loader) {
-        Log.e(LOG_TAG, "Response for onLoadReset()....");
         // Loader reset, so we can clear out our existing data.
         mAdapter.clear();
     }
