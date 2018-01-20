@@ -96,7 +96,6 @@ public class EarthquakeActivity extends AppCompatActivity
         // bundle. Pass in this activity for LoaderCalLBacks parameter (which is valid
         // because this activity implements the LoaderCallBack interface).
         loaderManager.initLoader(EARTHQUAKE_LOADER_ID, null, this);
-        Log.e(LOG_TAG, "Response for initLoader().....");
 
     }
 
