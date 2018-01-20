@@ -43,7 +43,6 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
      */
     @Override
     public List<Earthquake> loadInBackground() {
-        Log.e(LOG_TAG, "Response for loadInBackground()....");
         if(mUrl == null)    {
             return null;
         }
