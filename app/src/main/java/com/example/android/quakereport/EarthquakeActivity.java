@@ -69,6 +69,9 @@ public class EarthquakeActivity extends AppCompatActivity
         // so the list can be populated in the user interface
         earthquakeListView.setAdapter(mAdapter);
 
+        // Set the empty state TextView onto the ListView
+        earthquakeListView.setEmptyView(findViewById((R.id.empty_view)));
+
         // Set an item click listener on the ListView, which sends an intent to web browser
         // to open a website with more information about the selected earthquake.
         earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
