@@ -26,6 +26,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +52,8 @@ public class EarthquakeActivity extends AppCompatActivity
     /** Adapter for the list of earthquakes */
     private EarthquakeAdapter mAdapter;
 
+    private TextView mEmptyStateTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +73,9 @@ public class EarthquakeActivity extends AppCompatActivity
         earthquakeListView.setAdapter(mAdapter);
 
         // Set the empty state TextView onto the ListView
-        earthquakeListView.setEmptyView(findViewById((R.id.empty_view)));
+        mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
+        earthquakeListView.setEmptyView(mEmptyStateTextView);
+
 
         // Set an item click listener on the ListView, which sends an intent to web browser
         // to open a website with more information about the selected earthquake.
