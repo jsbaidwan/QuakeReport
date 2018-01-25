@@ -115,6 +115,7 @@ public class EarthquakeActivity extends AppCompatActivity
 
     @Override
     public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> earthquakes) {
+        mEmptyStateTextView.setText("No Earthquake found");
         // Clear the adapter of previous earthquake data
         mAdapter.clear();
 
