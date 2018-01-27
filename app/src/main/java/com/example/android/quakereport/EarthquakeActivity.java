@@ -117,6 +117,7 @@ public class EarthquakeActivity extends AppCompatActivity
     public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> earthquakes) {
         // Set the empty state text to display "No Earthquake Found."
         mEmptyStateTextView.setText(R.string.no_earthquakes);
+
         // Clear the adapter of previous earthquake data
         mAdapter.clear();
 
