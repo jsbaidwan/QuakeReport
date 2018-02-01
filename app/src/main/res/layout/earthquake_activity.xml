@@ -35,6 +35,7 @@
         android:id="@+id/empty_view"
         android:layout_centerInParent="true"
         />
+<!-- Loading Indicator is only shown before the first load. -->
     <ProgressBar
         android:id="@+id/loading_indicator"
         style="@style/Widget.AppCompat.ProgressBar"
