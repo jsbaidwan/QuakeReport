@@ -23,4 +23,6 @@
 
     <!-- Text to display in the list when there are no earthquakes [CHAR LIMIT = NONE] -->
     <string name="no_earthquakes">No Earthquakes found.</string>
+
+
 </resources>
